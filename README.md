@@ -21,7 +21,7 @@ This utility transforms C/C++ code by replacing `goto` statements with equivalen
 
 ## Requirements
 
-- CMake >= 3.5
+- CMake >= 3.10
 - LLVM and Clang libraries installed on your system.
 
 ## Building
@@ -30,7 +30,7 @@ This utility transforms C/C++ code by replacing `goto` statements with equivalen
 
    Ensure that LLVM and Clang are installed and properly configured. You can download them from the official [LLVM website](https://llvm.org/).
 
-   On Ubuntu, you can install them using the following commands:
+   Or, on Ubuntu, you can install them using the following command:
 
    ```bash
    sudo apt-get install -y llvm clang libclang-dev
