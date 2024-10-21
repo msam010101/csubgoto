@@ -1,3 +1,7 @@
+# NOTICE
+
+THIS PROJECT IS NOWHERE NEAR COMPLETE. ITS BEING WORKED ON. AT THE MOMENT THERES LIKELY NOTHING USEFUL HERE. THESE ARE NOT THE REPOSITORIES YOU ARE LOOKING FOR!
+
 # csubgoto
 
 This utility transforms C/C++ code by replacing `goto` statements with equivalent state machine logic using a `switch-case` construct. It can be used as a C/C++ precompiler to transform code before compilation with WebAssembly.
