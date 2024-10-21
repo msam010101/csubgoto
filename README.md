@@ -30,6 +30,14 @@ This utility transforms C/C++ code by replacing `goto` statements with equivalen
 
    Ensure that LLVM and Clang are installed and properly configured. You can download them from the official [LLVM website](https://llvm.org/).
 
+   On Ubuntu, you can install them using the following commands:
+
+   ```bash
+   sudo apt-get install -y llvm clang libclang-dev
+   ```
+
+   Note, if the default install is not located in `/usr/lib/llvm-10`, you will need to set the `LLVM_ROOT` variable in the `CMakeLists.txt` file to the correct path.
+
 2. **Clone the Repository**
 
    ```bash
