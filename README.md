@@ -41,7 +41,7 @@ Procedure:
 1. Use libclang to parse C++14 compliant code into an abstract syntax tree (AST).
 2. Traverse the AST and identify each function with one or more `goto` statements.
 3. Validate that they only jump to labels within the same function.
-4. In each function, for each `goto` statement, find the smallest code block (whether its the function scope, a plain code block, a `for` code block, `switch` code block, `while` code block, or `do` code block) that contains the `goto` statement and its label. If there are other `goto` statements inside of that code block, expand the scope to the smallest code block that contains all of them and their labels. Do this recursively and create a data structure representing a single state machine.
+4. In each function, for each `goto` statement, find the smallest code block (whether its the function scope, a plain code block, a `for` code block, `switch` code block, `while` code block, or `do` code block) that contains the `goto` statement and its label. If there are other `goto` statements inside of that code block, expand the scope to the smallest code block that contains all of them and their labels. Do this recursively and, for each state machine, create a data structure.
 5. For each state machine, insert the csubgoto initializing code at the beginning of the block (ex. `enum { __STATE_CSUBGOTO_START__, label1, label2, __STATE_CSUBGOTO_FOR1_START__, __STATE_CSUBGOTO_FOR1_END__ } __csubgoto_state__ = __STATE_CSUBGOTO_START__; switch(__csubgoto_state__) { case __STATE_CSUBGOTO_START__:`).
 6. Replace any `goto` with a state set and break (ex. `{__csubgoto_state__ = label1; break;}`)
 7. Replace any labels with a case statement (ex. `case label1:`)
